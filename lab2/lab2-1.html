@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Задание 1</title>
+<script type="text/javascript">
+window.onload = function() {
+    var button = document.getElementById('input_button_bg_change');
+    var body = document.getElementsByTagName('body')[0];
+    var colors = ['#d7d4d9', '#bfa76b', '#bbao7a', '#808008', '#aaa500'];
+    button.onclick = function() {
+        body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    };
+};
+</script>
+</head>
+<body>
+    <input type="button" id="input_button_bg_change" value="Изменить цвет фона"/>
+    <p><button style='color: blue' onclick="window.location.href='index.html'">Вернуться в меню</button></p>
+</body>
+</html>

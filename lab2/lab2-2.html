@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Задание 2</title>
+    <script language="JavaScript"> 
+        function doSend(){
+            var pas=document.user.e.value.indexOf("@",1);
+            if(document.user.name.value==""){
+                alert('Поле имя не может быть пустым');
+                document.user.name.style.borderColor="#FF0000";
+            }
+            else if(document.user.pass.value==""){
+                document.user.name.style.borderColor="#000000";
+                alert('Поле пароль не может быть пустым');
+                document.user.pass.style.borderColor="#FF0000";
+            }
+            else if(document.user.pass.value.length<4){
+                document.user.name.style.borderColor="#000000";
+                alert('Пароль должен быть не меньше 4х символов');
+                document.user.pass.style.borderColor="#FF0000";
+            }
+            else if(document.user.podpass.value==""){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                alert('Поле подтверждение пароля не может быть пустым');
+                document.user.podpass.style.borderColor="#FF0000";
+            }
+            else if(document.user.podpass.value!=document.user.pass.value){
+                document.user.name.style.borderColor="#000000";
+                alert('Пароли не совпадают');
+                document.user.pass.style.borderColor="#FF0000";
+                document.user.podpass.style.borderColor="#FF0000";
+            }
+            else if(document.user.e.value==""){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                document.user.podpass.style.borderColor="#000000";
+                alert('Поле электронная почта не может быть пустым'); 
+                document.user.e.style.borderColor="#FF0000";
+            }
+            else if(pas==-1){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                document.user.podpass.style.borderColor="#000000";
+                alert('неверно указан адресс электронной почты');
+                document.user.e.style.borderColor="#FF0000";
+            }
+            else if(document.user.text.value==""){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                document.user.podpass.style.borderColor="#000000";
+                document.user.e.style.borderColor="#000000";
+                alert('Поле сообщение не может быть пустым');
+                document.user.text.style.borderColor="#FF0000";
+            }
+            else if(document.user.text.value.length<10){
+                document.user.name.style.borderColor="#000000";
+                document.user.pass.style.borderColor="#000000";
+                document.user.podpass.style.borderColor="#000000";
+                document.user.e.style.borderColor="#000000";
+                alert('Сообщение должно иметь не менее 10 исмволов');
+                document.user.text.style.borderColor="#FF0000";
+            }
+            else{ 
+                document.user.submit();
+            }
+        }
+    </script>
+  </head>
+  <body>
+    <p><b>Отправка сообщения:</b><br><br>
+    <form name="user">
+        Ваше имя * <input type="text" name="name" size="35"><br> 
+        Пароль * <input type="text" name="pass" size="32"><br>
+        Подтверждение пароля * <input type="text" name="podpass" size="17"><br> 
+        Email * <input type="text" name="e" size="48"><br>
+        Тема сообщения <input type="text" name="tema" size="39"><br>
+        Сообщение  <input type="textarea" name="text" size="44"><br>
+        <font size=4>*-обязательные поля</font><br><br>
+        <input type="button" value="Отправить" onClick="doSend()">
+        <input type="reset" value="Очистить">
+      </form>
+    </p>
+    <p><button style='color: blue' onclick="window.location.href='index.html'">Вернуться в меню </button></p>
+  </body>
+</html>

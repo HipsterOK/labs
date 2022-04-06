@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Задание 6 - Опрос</title>
+        <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    </head>
+    <body style="background-color:indianred">
+    <body>
+	<h1>Ваш любимая марка автомобилей?</h1>
+	<h3>Выберите вариант ответа</h3>
+        <form><button id="1">BMW</button>
+        <label id="l1"></label>
+        <output id="p1" type="text" name="1" ></output><br>
+        <br><button id="2">Mercedes</button>
+        <label id="l2"></label>
+        <output id="p2" type="text" name="2" readonly></output><br>
+        <br><button id="3">Lada</button>
+        <label id="l3"></label>
+        <output id="p3" type="text" name="3" readonly></output><br>
+		<br><button id="4">Mitsubishi</button>
+        <label id="l4"></label>
+        <output id="p4" type="text" name="4" readonly></output><br></form>
+	<br><button id="button"> Ответы в %</button>
+    <script type="text/javascript">
+        var a = 0;
+        var b = 0;
+        var c = 0;
+		var d = 0;
+        var sum = 0;
+        $(document).ready(function(){
+            $("#button").click(function(){
+                document.getElementById("p1").value = " Процент: "+(a/sum)*100+"%";
+                document.getElementById("p2").value = " Процент: "+(b/sum)*100+"%";
+                document.getElementById("p3").value = " Процент: "+(c/sum)*100+"%";
+				document.getElementById("p4").value = " Процент: "+(d/sum)*100+"%";
+            });
+            $("#1").click(function(){
+                a +=1;
+                sum +=1;
+                $("#l1").text("Кол-во голосов: "+a);
+                return false; });
+            $("#2").click(function(){
+                b +=1;
+                sum +=1;
+                $("#l2").text("Кол-во голосов: "+b);
+                return false; });
+            $("#3").click(function(){
+                c +=1;
+                sum +=1;
+                $("#l3").text("Кол-во голосов:  "+c);
+                return false; });
+			$("#4").click(function(){
+                d +=1;
+                sum +=1;
+                $("#l4").text("Кол-во голосов:  "+d);
+                return false; });
+        });
+    </script>
+    <p><button style='color: blue' onclick="window.location.href='index.html'">Вернуться в меню </button></p>
+    </body>
+</html>
